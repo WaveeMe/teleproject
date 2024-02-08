@@ -19,7 +19,6 @@ def send_messages():
                 print(f"Sended to {group}")
                 time.sleep(random.randint(30, 55))
 
-vds vps server
 
 while True:
     command = int(input("1 - Старт\n"))
