@@ -6,7 +6,7 @@ from config import *
 
 
 app = Client("account", api_id=api_id, api_hash=api_hash, system_version="4.16.30-vxmy_text")
-
+# hello world!!! how are you??
 groups = ["@nablokestore_chat", "@ua_store_chat", "@dizmoral_chat"]
 text = "Дам тутор + данные для добавления ссылки в тикток аккаунт. Любое кол-во подписчиков . Данные многоразовые , то есть вы можете купив 1 раз использовать их БЕСКОНЕЧНО. Цена 35грн , писать в лс, бан - реакция"
 
