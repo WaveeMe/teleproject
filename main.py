@@ -2,8 +2,8 @@ from pyrogram import Client
 import time
 import random
 
-api_id = 11961648
-api_hash = "dfbfb5b6c1978efc9a3ab9350e80a303"
+from config import *
+
 
 app = Client("account", api_id=api_id, api_hash=api_hash, system_version="4.16.30-vxmy_text")
 
