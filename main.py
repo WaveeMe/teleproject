@@ -14,22 +14,22 @@ def send_messages():
         while True:
             for group in groups:
                 try:
-                    app.send_photo(group, text=text)
+                    app.send_message(group, text=text)
                     print(f"Sended to {group}")
                 except FloodWait:
                     time.sleep(10)
-                    app.send_photo(group, text=text)
+                    app.send_message(group, text=text)
                     print(f"Sended to {group} with FloodWait Error")
                 time.sleep(random.randint(min_sleep, max_sleep))
 
 def check_info():
-    print(f"Группы в которые будет рассылка: {groups}\n"
+    print(f"\nГруппы в которые будет рассылка: {groups}\n"
           f"Текст: {text}\n"
-          f"Минимальная задержка: {min_sleep}, максимальная {max_sleep}")
+          f"Минимальная задержка: {min_sleep}, максимальная {max_sleep}\n")
     
 while True:
     command = int(input("1 - Старт\n"
-                        "2 - Проверка данных"))
+                        "2 - Проверка данных\n"))
     
     if command == 1:
         send_messages()
