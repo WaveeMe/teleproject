@@ -1,4 +1,5 @@
 from pyrogram import Client
+from pyrogram.errors import FloodWait
 import time
 import random
 
@@ -6,24 +7,34 @@ from config import *
 
 
 app = Client("account", api_id=api_id, api_hash=api_hash, system_version="4.16.30-vxmy_text")
-# hello world!!! how are you??
-groups = ["@nablokestore_chat", "@ua_store_chat", "@dizmoral_chat"]
-text = "Дам тутор + данные для добавления ссылки в тикток аккаунт. Любое кол-во подписчиков . Данные многоразовые , то есть вы можете купив 1 раз использовать их БЕСКОНЕЧНО. Цена 35грн , писать в лс, бан - реакция"
+
 
 def send_messages():
     with app:
         while True:
             for group in groups:
+                try:
+                    app.send_photo(group, text=text)
+                    print(f"Sended to {group}")
+                except FloodWait:
+                    time.sleep(10)
+                    app.send_photo(group, text=text)
+                    print(f"Sended to {group} with FloodWait Error")
+                time.sleep(random.randint(min_sleep, max_sleep))
 
-                app.send_photo(group, "photo2.jpg", caption=text)
-                print(f"Sended to {group}")
-                time.sleep(random.randint(30, 55))
-
-
+def check_info():
+    print(f"Группы в которые будет рассылка: {groups}\n"
+          f"Текст: {text}\n"
+          f"Минимальная задержка: {min_sleep}, максимальная {max_sleep}")
+    
 while True:
-    command = int(input("1 - Старт\n"))
+    command = int(input("1 - Старт\n"
+                        "2 - Проверка данных"))
+    
     if command == 1:
         send_messages()
+    if command == 2:
+        check_info()
 
 
     
