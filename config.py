@@ -1,6 +1,6 @@
-api_id = 11961648
-api_hash = "dfbfb5b6c1978efc9a3ab9350e80a303"
-text = ""
+api_id = 1
+api_hash = " "
+text = " "
 groups = ["", "", ""]
 #Минимальная задержка между сообщениями (рекомендуется более 20 секунд)
 min_sleep = 25
