@@ -2,9 +2,11 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait
 import time
 import random
+import warnings
 
 from config import *
 
+warnings.filterwarnings("ignore")
 
 app = Client("account", api_id=api_id, api_hash=api_hash, system_version="4.16.30-vxmy_text")
 
