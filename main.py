@@ -22,7 +22,7 @@ def send_messages():
                 time.sleep(random.randint(min_sleep, max_sleep))
 
 def check_info():
-    os.system("cls")
+    
     print(f"\nГруппы в которые будет рассылка: {groups}\n"
           f"Текст: {text}\n"
           f"Минимальная задержка: {min_sleep}, максимальная {max_sleep}\n")
